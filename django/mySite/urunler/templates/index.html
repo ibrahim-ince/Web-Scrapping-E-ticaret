@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-3">
+                <div class="list-group">
+                    {% for x in marka %}
+                        <a href="#" class="list-group-item list-group-item-action">
+                            {{ x }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    {% for urun in urunler %}
+                        <div class="col-99">
+                            <div class="card flex-row mb-2"><img src="{{urun.fotoUrl}}" width="200" height="150" class="card-img-left example-card-img-responsive" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ urun.Baslik }}</h5>
+                                    <p class="card-text"><b>Puan:</b> {{ urun.Puan }}  <b>Marka:</b> {{ urun.Marka }}  <b>İşletim Sistemi:</b> {{ urun.IsletimSistemi }}  <b>İşlemci Tipi:</b> {{ urun.IslemciTipi }}  <b>İşlemci Nesli:</b> {{ urun.IslemciNesli }}  <b>Ram:</b> {{ urun.Ram }}  <b>SSD Boyutu:</b> {{ urun.SSDBoyutu }}  <b>Ekran Boyutu:</b> {{ urun.EkranBoyutu }}</p>
+                                    <a href="{{ urun.hbLink }}" target="_blank" class="btn btn-primary">{{ urun.hbFiyat }} TL <img src="https://r.resimlink.com/sj5IuB0F.png" width="60" height="20"></a>
+                                    <a href="{{ urun.tkLink }}" target="_blank" class="btn btn-primary">{{ urun.tkFiyat }} TL <img src="https://img-teknosa-sap.mncdn.com/_ui/responsive/theme-teknosa/assets/images/logo.svg" width="60" height="20"></a>
+                                    <a href="{{ urun.tyLink }}" target="_blank" class="btn btn-primary">{{ urun.tyFiyat }} TL <img src="https://cdn.dsmcdn.com/web/logo/ty-web.svg" width="60" height="20"></a>
+                                    <a href="{{ urun.vcLink }}" target="_blank" class="btn btn-primary">{{ urun.vcFiyat }} TL <img src="https://www.vatanbilgisayar.com/assets/dist/images/vatanlogo.svg" width="60" height="20"></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
